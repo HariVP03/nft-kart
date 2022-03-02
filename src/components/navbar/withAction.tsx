@@ -27,6 +27,7 @@ import {
     AddIcon,
     ChevronRightIcon,
 } from "@chakra-ui/icons";
+import { useRouter } from "next/router";
 
 interface NavItem {
     label: string;
@@ -121,6 +122,41 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
 
 const withAction: React.FC<{ children: ReactNode }> = ({ children }) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
+
+    const router = useRouter();
+
+    interface MenuItems {
+        name: string;
+        onClick: () => void;
+        id: string;
+    }
+
+    const MenuLinksBefore: Array<MenuItems> = [
+        {
+            name: "Profile",
+            onClick: () => {
+                router.push("/profile");
+            },
+            id: "1",
+        },
+        {
+            name: "Inventory",
+            onClick: () => {
+                router.push("/inventory");
+            },
+            id: "2",
+        },
+    ];
+
+    const MenuLinksAfter: Array<MenuItems> = [
+        {
+            name: "Log Out",
+            onClick: () => {
+                router.push("/");
+            },
+            id: "3",
+        },
+    ];
 
     return (
         <>
@@ -228,10 +264,19 @@ const withAction: React.FC<{ children: ReactNode }> = ({ children }) => {
                                 />
                             </MenuButton>
                             <MenuList>
-                                <MenuItem>Link 1</MenuItem>
-                                <MenuItem>Link 2</MenuItem>
+                                {/* <MenuItem>Link 1</MenuItem>
+                                <MenuItem>Link 2</MenuItem> */}
+                                {MenuLinksBefore.map((e) => (
+                                    <MenuItem key={e.id} onClick={e.onClick}>
+                                        {e.name}
+                                    </MenuItem>
+                                ))}
                                 <MenuDivider />
-                                <MenuItem>Link 3</MenuItem>
+                                {MenuLinksAfter.map((e) => (
+                                    <MenuItem key={e.id} onClick={e.onClick}>
+                                        {e.name}
+                                    </MenuItem>
+                                ))}
                             </MenuList>
                         </Menu>
                     </Flex>
