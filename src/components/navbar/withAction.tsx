@@ -264,8 +264,6 @@ const withAction: React.FC<{ children: ReactNode }> = ({ children }) => {
                                 />
                             </MenuButton>
                             <MenuList>
-                                {/* <MenuItem>Link 1</MenuItem>
-                                <MenuItem>Link 2</MenuItem> */}
                                 {MenuLinksBefore.map((e) => (
                                     <MenuItem key={e.id} onClick={e.onClick}>
                                         {e.name}
@@ -281,18 +279,7 @@ const withAction: React.FC<{ children: ReactNode }> = ({ children }) => {
                         </Menu>
                     </Flex>
                 </Flex>
-
-                {/* {isOpen ? (
-                    <Box pb={4} display={{ md: "none" }}>
-                        <Stack as={"nav"} spacing={4}>
-                            {Links.map((link) => (
-                                <NavLink key={link}>{link}</NavLink>
-                            ))}
-                        </Stack>
-                    </Box>
-                ) : null} */}
             </Box>
-
             <Box p={4}>{children}</Box>
         </>
     );
