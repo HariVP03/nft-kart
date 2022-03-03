@@ -10,6 +10,7 @@
         "prettier": "prettier --write '**/*.{js,jsx,ts,tsx}'"
     },
     "dependencies": {
+        "@3rdweb/sdk": "^1.41.3",
         "@chakra-ui/icons": "^1.1.7",
         "@chakra-ui/react": "^1.1.4",
         "@emotion/react": "^11.1.4",
@@ -20,6 +21,7 @@
         "prettier": "^2.2.1",
         "react": "17.0.2",
         "react-dom": "17.0.2",
+        "react-icons": "^4.3.1",
         "recoil": "^0.1.2",
         "sass": "^1.32.5"
     },

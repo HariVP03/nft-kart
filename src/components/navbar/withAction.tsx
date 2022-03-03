@@ -140,9 +140,9 @@ const withAction: React.FC<{ children: ReactNode }> = ({ children }) => {
             id: "1",
         },
         {
-            name: "Inventory",
+            name: "My NFTs",
             onClick: () => {
-                router.push("/inventory");
+                router.push("/my-nfts");
             },
             id: "2",
         },
