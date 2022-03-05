@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Layout, FrontpageHero } from "@components";
+import { Layout, FrontpageHero2 } from "@components";
 import Head from "next/head";
 import { chakra, Flex } from "@chakra-ui/react";
 import NFTCard from "@components/cards";
@@ -48,7 +48,8 @@ const Home: React.FC = () => {
                 <link rel="shortcut icon" href="/icons/cart(2).ico" />
             </Head>
             <Layout>
-                <FrontpageHero />
+                {/* <FrontpageHero /> */}
+                <FrontpageHero2 />
                 <chakra.h1 mt={5} pl={10} fontSize="3xl" fontWeight="700">
                     Trending Now
                 </chakra.h1>
